@@ -22,8 +22,8 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-    	myRobot = new RobotDrive(0,1);
-    	stick = new Joystick(0);
+    	myRobot = new RobotDrive(0,1); //The 0,1 should be the spots where the motors are connected
+    	stick = new Joystick(0); //Joystick number 0, if drivers station asks
     }
     
     /**
@@ -36,7 +36,8 @@ public class Robot extends IterativeRobot {
     /**
      * This function is called periodically during autonomous
      */
-    public void autonomousPeriodic() {
+    public void autonomousPeriodic() {} /*
+    // I HAVE HASHED OUT THE AUTON CODE SO IT WONT RUN
     	if(autoLoopCounter < 100) //Check if we've completed 100 loops (approximately 2 seconds)
 		{
 			myRobot.drive(-0.5, 0.0); 	// drive forwards half speed
@@ -56,7 +57,7 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
-        myRobot.arcadeDrive(stick);
+        myRobot.arcadeDrive(stick); //stick is defined and should work with joystick)
     }
     
     /**
